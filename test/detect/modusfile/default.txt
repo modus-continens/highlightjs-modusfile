@@ -1,0 +1,9 @@
+my_app(profile) :-
+  (
+    from("rust:alpine")::set_workdir("/usr/src/app"), # FROM rust:alpine; WORKDIR /usr/src/app
+    copy(".", "."), # COPY . .
+    cargo_build(profile), # calling into another predicate
+  )::set_entrypoint(f"./target/${profile}/my_app"). # ENTRYPOINT ["./target/release/my_app"]
+
+cargo_build("debug") :- run("cargo build"). # RUN cargo build
+cargo_build("release") :- run("cargo build --release"). # RUN cargo build --release
