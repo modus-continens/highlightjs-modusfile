@@ -19,6 +19,7 @@ export default function (hljs) {
       "in_workdir",
       "set_workdir",
       "set_entrypoint",
+      "set_cmd",
       "in_env",
       "set_env",
       "append_path",
