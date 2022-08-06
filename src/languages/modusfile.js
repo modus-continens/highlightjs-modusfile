@@ -22,6 +22,7 @@ export default function (hljs) {
       "set_cmd",
       "in_env",
       "set_env",
+      "set_label",
       "append_path",
       "number_eq",
       "number_gt",
